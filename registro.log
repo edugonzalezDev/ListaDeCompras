@@ -68,3 +68,6 @@ CREATE TABLE LISTA_DE_COMPRAS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(
 [2024-08-24 23:10:38] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto
 [2024-08-24 23:10:38] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
 [2024-08-24 23:26:08] [ INFO ] [BD:74] Datos creados correctamente
+[2024-08-25 12:34:04] [ INFO ] [BD:74] Datos creados correctamente
+[2024-08-25 12:34:07] [ INFO ] [CategoriaProductoDAOH2:18] Iniciando el guardado de categoria de producto
+[2024-08-25 12:34:07] [ INFO ] [CategoriaProductoDAOH2:32] producto creado correctamente
