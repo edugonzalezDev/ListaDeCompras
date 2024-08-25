@@ -1,1 +1,23 @@
 [2024-08-24 21:32:34] [ INFO ] [BD:77] Datos creados correctamente
+[2024-08-24 22:15:37] [ ERROR] [BD:79] error inesperado: Imposible eliminar "TIENDA" debido a que "CONSTRAINT_F2D, CONSTRAINT_13" depende de él.
+Cannot drop "TIENDA" because "CONSTRAINT_F2D, CONSTRAINT_13" depends on it; SQL statement:
+DROP TABLE IF EXISTS TIENDA [90107-224]
+[2024-08-24 22:22:14] [ ERROR] [BD:79] error inesperado: Imposible eliminar "TIENDA" debido a que "CONSTRAINT_F2D, CONSTRAINT_13" depende de él.
+Cannot drop "TIENDA" because "CONSTRAINT_F2D, CONSTRAINT_13" depends on it; SQL statement:
+DROP TABLE IF EXISTS TIENDA [90107-224]
+[2024-08-24 22:22:20] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto con ID: 1
+[2024-08-24 22:22:20] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
+[2024-08-24 22:22:35] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto con ID: 0
+[2024-08-24 22:22:35] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
+[2024-08-24 22:22:36] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto con ID: 0
+[2024-08-24 22:22:36] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
+[2024-08-24 22:22:36] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto con ID: 0
+[2024-08-24 22:22:36] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
+[2024-08-24 22:22:37] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto con ID: 0
+[2024-08-24 22:22:37] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
+[2024-08-24 22:22:38] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto con ID: 0
+[2024-08-24 22:22:38] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
+[2024-08-24 22:22:39] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto con ID: 0
+[2024-08-24 22:22:39] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
+[2024-08-24 22:22:39] [ INFO ] [ProductoDAOH2:19] Iniciando el guardado del producto con ID: 0
+[2024-08-24 22:22:39] [ INFO ] [ProductoDAOH2:35] producto creado correctamente
