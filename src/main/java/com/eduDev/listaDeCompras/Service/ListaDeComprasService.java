@@ -15,4 +15,7 @@ public class ListaDeComprasService {
     public ListaDeCompras guardarListaDeCompras(ListaDeCompras listaDeCompras){
         return listaDeComprasiDao.guardar(listaDeCompras);
     }
+    public ListaDeCompras buscarPorId(Integer id){
+        return listaDeComprasiDao.buscarPorId(id);
+    }
 }

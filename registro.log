@@ -71,3 +71,14 @@ CREATE TABLE LISTA_DE_COMPRAS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(
 [2024-08-25 12:34:04] [ INFO ] [BD:74] Datos creados correctamente
 [2024-08-25 12:34:07] [ INFO ] [CategoriaProductoDAOH2:18] Iniciando el guardado de categoria de producto
 [2024-08-25 12:34:07] [ INFO ] [CategoriaProductoDAOH2:32] producto creado correctamente
+[2024-08-25 15:01:34] [ INFO ] [BD:74] Datos creados correctamente
+[2024-08-25 15:01:38] [ INFO ] [ProductoDAOH2:58] Iniciando la busqueda de lista de compras por ID:1
+[2024-08-25 15:41:53] [ INFO ] [BD:74] Datos creados correctamente
+[2024-08-25 15:41:56] [ INFO ] [ProductoDAOH2:59] Iniciando la busqueda de lista de compras por ID:1
+[2024-08-25 15:41:56] [ ERROR] [ProductoDAOH2:83] problemas con la BDColumna "LISTA_DE_COMPRAS_ID" no encontrada
+Column "LISTA_DE_COMPRAS_ID" not found [42122-224]
+[2024-08-25 15:41:58] [ INFO ] [ProductoDAOH2:59] Iniciando la busqueda de lista de compras por ID:1
+[2024-08-25 15:41:58] [ ERROR] [ProductoDAOH2:83] problemas con la BDColumna "LISTA_DE_COMPRAS_ID" no encontrada
+Column "LISTA_DE_COMPRAS_ID" not found [42122-224]
+[2024-08-25 15:43:39] [ INFO ] [BD:74] Datos creados correctamente
+[2024-08-25 15:43:41] [ INFO ] [ProductoDAOH2:59] Iniciando la busqueda de lista de compras por ID:1
