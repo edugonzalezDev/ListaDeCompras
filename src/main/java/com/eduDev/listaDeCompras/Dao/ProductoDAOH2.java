@@ -16,7 +16,7 @@ public class ProductoDAOH2 implements iDao<Producto>{
 
     @Override
     public Producto guardar(Producto producto) {
-        logger.info("Iniciando el guardado del producto con ID: "+producto.getId());
+        logger.info("Iniciando el guardado del producto");
         Connection connection = null;
 
         try {
