@@ -71,23 +71,14 @@ CREATE TABLE LISTA_DE_COMPRAS(ID INT AUTO_INCREMENT PRIMARY KEY, NOMBRE VARCHAR(
 [2024-08-25 12:34:04] [ INFO ] [BD:74] Datos creados correctamente
 [2024-08-25 12:34:07] [ INFO ] [CategoriaProductoDAOH2:18] Iniciando el guardado de categoria de producto
 [2024-08-25 12:34:07] [ INFO ] [CategoriaProductoDAOH2:32] producto creado correctamente
-[2024-08-25 15:52:35] [ ERROR] [BD:85] error inesperado: Tabla "LISTA_DE_COMPRAS" no encontrada
-Table "LISTA_DE_COMPRAS" not found; SQL statement:
-CREATE TABLE LISTA_DE_COMPRAS_PRODUCTO (ID INT AUTO_INCREMENT PRIMARY KEY, LISTA_DE_COMPRAS_ID INT NOT NULL, PRODUCTO_ID INT NOT NULL, CANTIDAD DOUBLE NOT NULL, FOREIGN KEY (LISTA_DE_COMPRAS_ID) REFERENCES LISTA_DE_COMPRAS(ID), FOREIGN KEY (PRODUCTO_ID) REFERENCES PRODUCTO(ID)) [42102-224]
-[2024-08-25 15:53:36] [ ERROR] [BD:85] error inesperado: Tabla "PRODUCTO" no encontrada
-Table "PRODUCTO" not found; SQL statement:
-CREATE TABLE LISTA_DE_COMPRAS_PRODUCTO (ID INT AUTO_INCREMENT PRIMARY KEY, LISTA_DE_COMPRAS_ID INT NOT NULL, PRODUCTO_ID INT NOT NULL, CANTIDAD DOUBLE NOT NULL, FOREIGN KEY (LISTA_DE_COMPRAS_ID) REFERENCES LISTA_DE_COMPRAS(ID), FOREIGN KEY (PRODUCTO_ID) REFERENCES PRODUCTO(ID)) [42102-224]
-[2024-08-25 15:54:00] [ INFO ] [BD:83] Datos creados correctamente
-[2024-08-25 15:55:42] [ ERROR] [BD:91] error inesperado: Imposible eliminar "PRODUCTO" debido a que "CONSTRAINT_ADC" depende de él.
-Cannot drop "PRODUCTO" because "CONSTRAINT_ADC" depends on it; SQL statement:
-DROP TABLE IF EXISTS PRODUCTO [90107-224]
-[2024-08-25 15:57:04] [ ERROR] [BD:91] error inesperado: Imposible eliminar "TIENDA" debido a que "CONSTRAINT_F2D, CONSTRAINT_13" depende de él.
-Cannot drop "TIENDA" because "CONSTRAINT_F2D, CONSTRAINT_13" depends on it; SQL statement:
-DROP TABLE IF EXISTS TIENDA [90107-224]
-[2024-08-25 15:57:44] [ ERROR] [BD:91] error inesperado: Violación de una restricción de Integridad Referencial: "CONSTRAINT_ADC: PUBLIC.LISTA_DE_COMPRAS_PRODUCTO FOREIGN KEY(PRODUCTO_ID) REFERENCES PUBLIC.PRODUCTO(ID) (101)"
-Referential integrity constraint violation: "CONSTRAINT_ADC: PUBLIC.LISTA_DE_COMPRAS_PRODUCTO FOREIGN KEY(PRODUCTO_ID) REFERENCES PUBLIC.PRODUCTO(ID) (101)"; SQL statement:
-INSERT INTO TIENDA (NOMBRE, DIRECCION) VALUES ('Tienda Central', '123 Avenida Principal'), ('Tienda Norte', '456 Calle Norte'), ('Tienda Sur', '789 Calle Sur') [23506-224]
-[2024-08-25 15:58:30] [ ERROR] [BD:91] error inesperado: Violación de una restricción de Integridad Referencial: "CONSTRAINT_ADC: PUBLIC.LISTA_DE_COMPRAS_PRODUCTO FOREIGN KEY(PRODUCTO_ID) REFERENCES PUBLIC.PRODUCTO(ID) (101)"
-Referential integrity constraint violation: "CONSTRAINT_ADC: PUBLIC.LISTA_DE_COMPRAS_PRODUCTO FOREIGN KEY(PRODUCTO_ID) REFERENCES PUBLIC.PRODUCTO(ID) (101)"; SQL statement:
-INSERT INTO TIENDA (NOMBRE, DIRECCION) VALUES ('Tienda Central', '123 Avenida Principal'), ('Tienda Norte', '456 Calle Norte'), ('Tienda Sur', '789 Calle Sur') [23506-224]
-[2024-08-25 16:00:57] [ INFO ] [BD:89] Datos creados correctamente
+[2024-08-25 15:01:34] [ INFO ] [BD:74] Datos creados correctamente
+[2024-08-25 15:01:38] [ INFO ] [ProductoDAOH2:58] Iniciando la busqueda de lista de compras por ID:1
+[2024-08-25 15:41:53] [ INFO ] [BD:74] Datos creados correctamente
+[2024-08-25 15:41:56] [ INFO ] [ProductoDAOH2:59] Iniciando la busqueda de lista de compras por ID:1
+[2024-08-25 15:41:56] [ ERROR] [ProductoDAOH2:83] problemas con la BDColumna "LISTA_DE_COMPRAS_ID" no encontrada
+Column "LISTA_DE_COMPRAS_ID" not found [42122-224]
+[2024-08-25 15:41:58] [ INFO ] [ProductoDAOH2:59] Iniciando la busqueda de lista de compras por ID:1
+[2024-08-25 15:41:58] [ ERROR] [ProductoDAOH2:83] problemas con la BDColumna "LISTA_DE_COMPRAS_ID" no encontrada
+Column "LISTA_DE_COMPRAS_ID" not found [42122-224]
+[2024-08-25 15:43:39] [ INFO ] [BD:74] Datos creados correctamente
+[2024-08-25 15:43:41] [ INFO ] [ProductoDAOH2:59] Iniciando la busqueda de lista de compras por ID:1
