@@ -1,4 +1,22 @@
 package com.eduDev.listaDeCompras.Controller;
 
+import com.eduDev.listaDeCompras.Model.ListaDeCompras;
+import com.eduDev.listaDeCompras.Service.ListaDeComprasService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/lista-de-compras")
 public class ListaDeComprasController {
+    private ListaDeComprasService listaDeComprasService;
+
+    public ListaDeComprasController() {
+        listaDeComprasService = new ListaDeComprasService();
+    }
+    @PostMapping
+    public ListaDeCompras guardarListaDeCompras(@RequestBody ListaDeCompras listaDeCompras){
+        return listaDeComprasService.guardarListaDeCompras(listaDeCompras);
+    }
 }
