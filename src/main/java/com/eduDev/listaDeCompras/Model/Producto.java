@@ -12,8 +12,8 @@ import lombok.Setter;
 public class Producto {
     private int id;
     private String nombre;
-    private int categoriaId;
+    private CategoriaProducto categoriaProducto;
     private String unidadMedida;
     private double cantBase;
-    private int tiendaPredeterminadaId;
+    private Tienda tienda;
 }
