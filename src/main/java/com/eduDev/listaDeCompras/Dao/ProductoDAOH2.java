@@ -1,6 +1,8 @@
 package com.eduDev.listaDeCompras.Dao;
 
+import com.eduDev.listaDeCompras.Model.CategoriaProducto;
 import com.eduDev.listaDeCompras.Model.Producto;
+import com.eduDev.listaDeCompras.Model.Tienda;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -18,15 +20,19 @@ public class ProductoDAOH2 implements iDao<Producto>{
     public Producto guardar(Producto producto) {
         logger.info("Iniciando el guardado del producto");
         Connection connection = null;
+        TiendaDAOH2 tiendaDAOH2 = new TiendaDAOH2();
+        Tienda tienda = tiendaDAOH2.guardar(producto.getTienda());
+        CategoriaProductoDAOH2 categoriaProductoDAOH2 = new CategoriaProductoDAOH2();
+        CategoriaProducto categoriaProducto = categoriaProductoDAOH2.guardar(producto.getCategoriaProducto());
 
         try {
             connection= BD.getConnection();
             PreparedStatement statement = connection.prepareStatement(SQL_INSERT, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, producto.getNombre());
-            statement.setInt(2, producto.getCategoriaId());
+            statement.setInt(2, categoriaProducto.getId());
             statement.setString(3,producto.getUnidadMedida());
             statement.setDouble(4, producto.getCantBase());
-            statement.setInt(5, producto.getTiendaPredeterminadaId());
+            statement.setInt(5, tienda.getId());
             statement.execute();
             ResultSet rs= statement.getGeneratedKeys();
             while (rs.next()){
