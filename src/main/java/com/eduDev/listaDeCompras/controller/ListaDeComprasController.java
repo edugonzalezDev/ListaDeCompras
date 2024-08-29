@@ -1,23 +1,24 @@
-package com.eduDev.listaDeCompras.Controller;
+package com.eduDev.listaDeCompras.controller;
 
-import com.eduDev.listaDeCompras.Model.ListaDeCompras;
-import com.eduDev.listaDeCompras.Service.ListaDeComprasService;
+import com.eduDev.listaDeCompras.entity.ListaDeCompras;
+import com.eduDev.listaDeCompras.service.ListaDeComprasService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/lista-de-compras")
 public class ListaDeComprasController {
+    @Autowired
     private ListaDeComprasService listaDeComprasService;
 
-    public ListaDeComprasController() {
-        listaDeComprasService = new ListaDeComprasService();
-    }
     @PostMapping
     public ListaDeCompras guardarListaDeCompras(@RequestBody ListaDeCompras listaDeCompras){
         return listaDeComprasService.guardarListaDeCompras(listaDeCompras);
     }
     @GetMapping("/buscar/{id}")
-    public ListaDeCompras buscarPorId(@PathVariable Integer id){
+    public Optional<ListaDeCompras> buscarPorId(@PathVariable Integer id){
         return listaDeComprasService.buscarPorId(id);
     }
 }

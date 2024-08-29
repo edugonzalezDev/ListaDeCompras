@@ -1,5 +1,6 @@
-package com.eduDev.listaDeCompras.Model;
+package com.eduDev.listaDeCompras.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -7,13 +8,15 @@ import lombok.Setter;
 
 import java.sql.Date;
 
-@Getter
-@Setter
-@AllArgsConstructor
 @Data
+@Entity
 public class ListaDeCompras {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
     private Date fechaCreacion;
-    private int tiendaId;
+    @ManyToOne
+    @JoinColumn(name = "tienda_id", nullable = false)
+    private Tienda tienda;
 }
