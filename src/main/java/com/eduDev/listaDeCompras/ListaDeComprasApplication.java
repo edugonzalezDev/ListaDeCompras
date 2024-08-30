@@ -9,5 +9,4 @@ public class ListaDeComprasApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ListaDeComprasApplication.class, args);
 	}
-
 }

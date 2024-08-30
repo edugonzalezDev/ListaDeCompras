@@ -1,0 +1,82 @@
+/* Estilos base */
+body {
+    background-color: #1E1E1E; /* Fondo oscuro */
+    color: #FFFFFF; /* Texto en blanco */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal de la app */
+.app-container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #A3E635; /* Verde pastel */
+}
+
+/* Tarjetas de sección */
+.card {
+    background-color: #2D2D2D; /* Color de las tarjetas */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #38BDF8; /* Azul pastel */
+}
+
+/* Lista de compras */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Barra de progreso */
+.progress-bar {
+    background-color: #4B5563; /* Gris medio */
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.progress {
+    background-color: #FB7185; /* Rosa pastel */
+    height: 100%;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 0.8em;
+    color: #FBBF24; /* Amarillo pastel */
+}
