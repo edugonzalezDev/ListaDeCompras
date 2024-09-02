@@ -3,41 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App de Organización Personal</title>
+    <title>Gestión de Listas de Compras</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/styles.css">
+<!--    <script type="text/javascript" src="./scripts/delete_producto.js"></script>-->
+<!--    <script type="text/javascript" src="./scripts/get_categorias.js"></script>-->
+<!--    <script type="text/javascript" src="./scripts/post_categoria.js"></script>-->
+<!--    <script type="text/javascript" src="./scripts/get_lista.js"></script>-->
+    <script type="text/javascript" src="./scripts/post_lista.js"></script>
+    <script type="text/javascript" src="./scripts/post_tienda.js"></script>
+    <script type="text/javascript" src="./scripts/get_tiendas.js"></script>
+    <script type="text/javascript" src="./scripts/delete_tienda.js"></script>
+<!--    <script type="text/javascript" src="./scripts/post_lista.js"></script>-->
+<!--    <script type="text/javascript" src="./scripts/post_producto.js"></script>-->
+<!--    <script type="text/javascript" src="./scripts/get_productos.js"></script>-->
 </head>
-<body>
-    <div class="app-container">
-        <header>
-            <h1>Organiza tu Vida</h1>
-        </header>
-        <main>
-            <section class="card">
-                <h2>Gestión de Finanzas</h2>
-                <div class="chart"></div>
-            </section>
-            <section class="card">
-                <h2>Lista de Compras</h2>
-                <ul>
-                    <li><input type="checkbox" id="item1"><label for="item1">Pan</label></li>
-                    <li><input type="checkbox" id="item2"><label for="item2">Leche</label></li>
-                    <li><input type="checkbox" id="item3"><label for="item3">Huevos</label></li>
-                </ul>
-            </section>
-            <section class="card">
-                <h2>Registro de Hábitos</h2>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 50%;"></div>
-                </div>
-            </section>
-            <section class="card">
-                <h2>Planificación de Comidas</h2>
-                <p>Hoy: Ensalada César</p>
-            </section>
-        </main>
-        <footer>
-            <p>© 2024 Mi App de Organización Personal</p>
-        </footer>
+<body class="bg-dark text-light">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Gestión de Listas de Compras</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#lista_de_compras">Listas de Compras</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#productos">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tiendas">Tiendas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#categorias">Categorías</a>
+            </li>
+        </ul>
     </div>
+</nav>
+
+<!-- Login Section -->
+<section id="login" class="container my-5">
+    <h2 class="text-center">Iniciar Sesión</h2>
+    <form class="row g-3">
+
+        <div class="form-group col-md-6">
+            <label for="username">Usuario</label>
+            <input type="text" class="form-control" id="username" placeholder="Introduce tu usuario">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </div>
+    </form>
+</section>
+
+<!-- Lista de Compras Section -->
+<section id="lista_de_compras" class="container my-5">
+    <h2 class="text-center">Gestión de Listas de Compras</h2>
+
+    <!-- Formulario para Crear una Nueva Lista de Compras -->
+    <form id="add_new_lista" class="bg-secondary p-4 my-4 rounded">
+        <h4 class="text-light">Crear Nueva Lista de Compras</h4>
+        <div class="form-group">
+            <label for="nombre_lista">Nombre de la Lista</label>
+            <input type="text" class="form-control" id="nombre_lista" placeholder="Nombre de la Lista">
+        </div>
+        <div class="form-group">
+            <label for="tienda_select">Seleccionar Tienda</label>
+            <select class="form-control" id="tienda_select">
+                <!-- Las opciones se llenarán dinámicamente con las tiendas disponibles -->
+                <option value="">Seleccione una tienda</option>
+                <!-- Ejemplo de opciones -->
+                <option value="1">Tienda A</option>
+                <option value="2">Tienda B</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Crear Lista</button>
+    </form>
+
+    <!-- Contenedor para mensajes de respuesta -->
+    <div id="lista_response" style="display: none;"></div>
+
+    <!-- Lista de Listas de Compras -->
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action bg-secondary text-light">Lista de Compras 1</a>
+        <a href="#" class="list-group-item list-group-item-action bg-secondary text-light">Lista de Compras 2</a>
+        <!-- Más listas dinámicas -->
+    </div>
+
+    <!-- Productos en una Lista de Compras Específica -->
+    <h4 class="text-light mt-5">Productos en la Lista Seleccionada</h4>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action bg-secondary text-light">Producto 1</a>
+        <a href="#" class="list-group-item list-group-item-action bg-secondary text-light">Producto 2</a>
+        <!-- Más productos dinámicos -->
+    </div>
+
+    <!-- Formulario para Agregar Productos a una Lista de Compras -->
+    <form id="add_producto_lista" class="bg-secondary p-4 my-4 rounded">
+        <h4 class="text-light">Agregar Producto a la Lista</h4>
+        <div class="form-group">
+            <label for="producto_lista">Producto</label>
+            <input type="text" class="form-control" id="producto_lista" placeholder="Nombre del Producto">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Agregar Producto</button>
+    </form>
+</section>
+
+<!-- Productos Section -->
+<section id="productos" class="container my-5">
+    <h2 class="text-center">Gestión de Productos</h2>
+
+    <!-- Formulario para Registrar un Producto Nuevo -->
+    <form id="add_new_producto" class="bg-secondary p-4 my-4 rounded">
+        <h4 class="text-light">Registrar Nuevo Producto</h4>
+        <div class="form-group">
+            <label for="nombre_producto">Nombre del Producto</label>
+            <input type="text" class="form-control" id="nombre_producto" placeholder="Nombre del Producto">
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Registrar Producto</button>
+    </form>
+
+    <!-- Lista de Productos -->
+    <div class="bg-secondary p-4 my-4 rounded">
+        <table id="productoTable" class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+            </thead>
+            <tbody id="productoTableBody">
+            <!-- Productos se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Tiendas Section -->
+<section id="tiendas" class="container my-5">
+    <h2 class="text-center">Gestión de Tiendas</h2>
+
+    <!-- Formulario para Registrar una Nueva Tienda -->
+    <form id="add_new_tienda" class="bg-secondary p-4 my-4 rounded">
+        <h4 class="text-light">Registrar Nueva Tienda</h4>
+        <div class="form-group">
+            <label for="nombre_tienda">Nombre de la Tienda</label>
+            <input type="text" class="form-control" id="nombre_tienda" placeholder="Nombre de la Tienda">
+        </div>
+        <div class="form-group">
+            <label for="direccion_tienda">Dirección de la Tienda</label>
+            <input type="text" class="form-control" id="direccion_tienda" placeholder="Dirección de la Tienda">
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Registrar Tienda</button>
+    </form>
+
+    <!-- Contenedor para mensajes de respuesta -->
+    <div id="tienda_response" style="display: none;"></div>
+
+    <!-- Tabla de Lista de Tiendas -->
+    <div class="bg-secondary p-4 my-4 rounded">
+        <h4 class="text-light">Lista de Tiendas</h4>
+        <table id="tiendaTable" class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+            </thead>
+            <tbody id="tiendaTableBody">
+            <!-- Las tiendas se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<!-- Categorías Section -->
+<section id="categorias" class="container my-5">
+    <h2 class="text-center">Gestión de Categorías de Productos</h2>
+    <!-- Similar estructura a la sección de productos -->
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

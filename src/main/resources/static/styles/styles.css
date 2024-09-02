@@ -1,82 +1,62 @@
-/* Estilos base */
 body {
-    background-color: #1E1E1E; /* Fondo oscuro */
-    color: #FFFFFF; /* Texto en blanco */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #2c2c2c;
+    color: #f1f1f1;
 }
 
-/* Contenedor principal de la app */
-.app-container {
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-}
-
-/* Encabezado */
-header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 2em;
-    color: #A3E635; /* Verde pastel */
-}
-
-/* Tarjetas de sección */
-.card {
-    background-color: #2D2D2D; /* Color de las tarjetas */
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+.navbar-brand, .nav-link {
+    color: #b0e0e6 !important;
 }
 
 h2 {
-    font-size: 1.5em;
-    color: #38BDF8; /* Azul pastel */
+    color: #b0e0e6;
 }
 
-/* Lista de compras */
-ul {
-    list-style-type: none;
-    padding: 0;
+.form-control {
+    background-color: #333;
+    color: #f1f1f1;
+    border-color: #555;
 }
 
-li {
-    margin: 10px 0;
+.form-control::placeholder {
+    color: #aaa;
 }
 
-input[type="checkbox"] {
-    margin-right: 10px;
+.btn-primary {
+    background-color: #6a5acd;
+    border-color: #6a5acd;
 }
 
-/* Barra de progreso */
-.progress-bar {
-    background-color: #4B5563; /* Gris medio */
-    border-radius: 8px;
-    overflow: hidden;
-    height: 20px;
-    margin-top: 10px;
+.btn-success {
+    background-color: #66cdaa;
+    border-color: #66cdaa;
 }
 
-.progress {
-    background-color: #FB7185; /* Rosa pastel */
-    height: 100%;
+.btn-warning {
+    background-color: #ffa07a;
+    border-color: #ffa07a;
 }
 
-/* Pie de página */
-footer {
+.btn-danger {
+    background-color: #ff6347;
+    border-color: #ff6347;
+}
+
+.bg-secondary {
+    background-color: #444 !important;
+}
+
+.action-column {
+    width: 1%;
+    white-space: nowrap;
     text-align: center;
-    margin-top: 20px;
 }
 
-footer p {
-    font-size: 0.8em;
-    color: #FBBF24; /* Amarillo pastel */
+form.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.btn {
+    display: inline-block;
+    margin: auto;
 }
