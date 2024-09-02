@@ -9,7 +9,7 @@
 <!--    <script type="text/javascript" src="./scripts/delete_producto.js"></script>-->
 <!--    <script type="text/javascript" src="./scripts/get_categorias.js"></script>-->
 <!--    <script type="text/javascript" src="./scripts/post_categoria.js"></script>-->
-<!--    <script type="text/javascript" src="./scripts/get_lista.js"></script>-->
+    <script type="text/javascript" src="./scripts/get_listas.js"></script>
     <script type="text/javascript" src="./scripts/post_lista.js"></script>
     <script type="text/javascript" src="./scripts/post_tienda.js"></script>
     <script type="text/javascript" src="./scripts/get_tiendas.js"></script>
@@ -93,10 +93,22 @@
     <div id="lista_response" style="display: none;"></div>
 
     <!-- Lista de Listas de Compras -->
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action bg-secondary text-light">Lista de Compras 1</a>
-        <a href="#" class="list-group-item list-group-item-action bg-secondary text-light">Lista de Compras 2</a>
-        <!-- Más listas dinámicas -->
+    <div class="bg-secondary p-4 my-4 rounded">
+        <h4 class="text-light">Lista de Compras</h4>
+        <table id="listaTable" class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tienda</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+            </thead>
+            <tbody id="listaTableBody">
+            <!-- Las listas se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
     </div>
 
     <!-- Productos en una Lista de Compras Específica -->
