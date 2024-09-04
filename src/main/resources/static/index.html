@@ -111,14 +111,6 @@
         </table>
     </div>
 
-    <!-- Productos en una Lista de Compras Específica -->
-    <h4 class="text-light mt-5">Productos en la Lista Seleccionada</h4>
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action bg-secondary text-light">Producto 1</a>
-        <a href="#" class="list-group-item list-group-item-action bg-secondary text-light">Producto 2</a>
-        <!-- Más productos dinámicos -->
-    </div>
-
     <!-- Formulario para Agregar Productos a una Lista de Compras -->
     <form id="add_producto_lista" class="bg-secondary p-4 my-4 rounded">
         <h4 class="text-light">Agregar Producto a la Lista</h4>
@@ -128,6 +120,29 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block">Agregar Producto</button>
     </form>
+
+    <div id="producto_response" style="display: none;"></div>
+
+    <!-- Lista de Productros -->
+    <div class="bg-secondary p-4 my-4 rounded">
+        <h4 class="text-light">Lista de Compras</h4>
+        <table id="lproductoTable" class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">UM</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+            </thead>
+            <tbody id="listaProductoTableBody">
+            <!-- Las listas se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
 </section>
 
 <!-- Productos Section -->
@@ -141,6 +156,26 @@
             <label for="nombre_producto">Nombre del Producto</label>
             <input type="text" class="form-control" id="nombre_producto" placeholder="Nombre del Producto">
         </div>
+        <div class="form-group">
+            <label for="tienda_select">Seleccionar Categoría</label>
+            <select class="form-control" id="categoria_producto">
+                <!-- Las opciones se llenarán dinámicamente con las tiendas disponibles -->
+                <option value="">Seleccione una categoria</option>
+                <!-- Ejemplo de opciones -->
+                <option value="1">Categoria 1</option>
+                <option value="2">Categoria 2</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="tienda_select">Seleccionar Unidad de medida</label>
+            <select class="form-control" id="um_producto">
+                <!-- Las opciones se llenarán dinámicamente con las tiendas disponibles -->
+                <option value="">Seleccione una UM</option>
+                <!-- Ejemplo de opciones -->
+                <option value="1">Unidades</option>
+                <option value="2">Kg</option>
+            </select>
+        </div>
         <button type="submit" class="btn btn-success btn-block">Registrar Producto</button>
     </form>
 
@@ -151,6 +186,8 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">UM</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Eliminar</th>
             </tr>
